@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CourseRegistration.Core.ApplicationService;
+using CourseRegistration.Core.DomainService;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +29,8 @@ namespace CourseRegistration
         {
             services.AddControllers();
             services.AddOpenApiDocument();
+            services.AddScoped<CourseRegistrationService>();
+            //services.AddScoped<ICourseRepository, CourseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
