@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseRegistration.Infrastructure.API", "CourseRegistration\CourseRegistration.Infrastructure.API.csproj", "{D9B8D8AE-435F-434F-81A8-60287DAA4F0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseRegistration.Core", "CourseRegistration.Core\CourseRegistration.Core.csproj", "{61AEC4A1-3247-4F11-BB3E-9782C6A14DFC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CourseRegistration.Core", "CourseRegistration.Core\CourseRegistration.Core.csproj", "{61AEC4A1-3247-4F11-BB3E-9782C6A14DFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseRegistration.Infrastructure.DataAccess", "CourseRegistration.Infrastructure.DataAccess\CourseRegistration.Infrastructure.DataAccess.csproj", "{54D024B1-2253-4FA3-A391-9A143E4C3020}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{61AEC4A1-3247-4F11-BB3E-9782C6A14DFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61AEC4A1-3247-4F11-BB3E-9782C6A14DFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61AEC4A1-3247-4F11-BB3E-9782C6A14DFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54D024B1-2253-4FA3-A391-9A143E4C3020}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54D024B1-2253-4FA3-A391-9A143E4C3020}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54D024B1-2253-4FA3-A391-9A143E4C3020}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54D024B1-2253-4FA3-A391-9A143E4C3020}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

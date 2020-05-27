@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using CourseRegistration.Core.ApplicationService;
 using CourseRegistration.Core.DomainService;
+using CourseRegistration.Infrastructure.API.Repository;
+using CourseRegistration.Infrastructure.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -29,8 +31,10 @@ namespace CourseRegistration
         {
             services.AddControllers();
             services.AddOpenApiDocument();
+            services.AddSingleton<IPathRepository>(new PathRepository(
+                @"C:\Users\Terje\source\repos\CourseRegistration\CourseRegistration\bin\Debug\netcoreapp3.1\courses"));
             services.AddScoped<CourseRegistrationService>();
-            //services.AddScoped<ICourseRepository, CourseRepository>();
+            services.AddScoped<ICourseRepository, CourseRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

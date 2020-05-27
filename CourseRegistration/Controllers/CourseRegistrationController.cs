@@ -27,24 +27,20 @@ namespace CourseRegistration.Controllers
         [HttpPut]
         public ActionResult RegisterCourse([FromBody]RegistrationViewModel registrationViewModel)
         {
-            var registration = new Registration
+            try
             {
-                CourseId =  registrationViewModel.CourseId,
-                StudentEmail = registrationViewModel.StudentEmail
-            };
-            _courseRegistrationService.CreateRegistration(registration);
-
-            //var basePath = _env.ContentRootPath + @"\bin\Debug\netcoreapp3.1\courses";
-            //var fileNames = Directory.GetFiles(basePath);
-            //var fileName = fileNames.SingleOrDefault(fn => fn.Contains(registrationViewModel.CourseId.ToString()));
-            //if (fileName == null) return StatusCode(401, "Fant ikke kurs.");
-            //var courseParts = fileName.Split(@"\").Last().Split(new []{'_', '.'});
-            //var capacity = Convert.ToInt32(courseParts[2]);
-            //var registrations = System.IO.File.ReadAllLines(fileName);
-            //if (registrations.Contains(registrationViewModel.StudentEmail)) return StatusCode(402, "Allerede påmeldt.");
-            //if (registrations.Length >= capacity) return StatusCode(403, "Ikke flere plasser.");
-            //System.IO.File.AppendAllText(fileName, registrationViewModel.StudentEmail + "\n");
-            return Ok();
+                var registration = new Registration
+                {
+                    CourseId = registrationViewModel.CourseId,
+                    StudentEmail = registrationViewModel.StudentEmail
+                };
+                _courseRegistrationService.CreateRegistration(registration);
+                return Ok();
+            }
+            catch (ApplicationException e)
+            {
+                return StatusCode(401, e.Message);
+            }
         }
 
         public class RegistrationViewModel
@@ -54,3 +50,4 @@ namespace CourseRegistration.Controllers
         }
     }
 }
+;

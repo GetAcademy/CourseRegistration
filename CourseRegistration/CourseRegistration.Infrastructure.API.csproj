@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CourseRegistration.Core\CourseRegistration.Core.csproj" />
+    <ProjectReference Include="..\CourseRegistration.Infrastructure.DataAccess\CourseRegistration.Infrastructure.DataAccess.csproj" />
   </ItemGroup>
 
 
